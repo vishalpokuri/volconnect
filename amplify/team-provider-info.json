@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-volconnect2-staging-161537-authRole",
+      "UnauthRoleArn": "arn:aws:iam::125563597629:role/amplify-volconnect2-staging-161537-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::125563597629:role/amplify-volconnect2-staging-161537-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-volconnect2-staging-161537-deployment",
+      "UnauthRoleName": "amplify-volconnect2-staging-161537-unauthRole",
+      "StackName": "amplify-volconnect2-staging-161537",
+      "StackId": "arn:aws:cloudformation:ap-south-1:125563597629:stack/amplify-volconnect2-staging-161537/34e69d90-8889-11ee-85c3-02c52b252a1a",
+      "AmplifyAppId": "d25hzhk5bjkxye"
+    },
+    "categories": {
+      "auth": {
+        "volconnect2": {}
+      },
+      "geo": {
+        "volmap": {}
+      }
+    }
+  }
+}
