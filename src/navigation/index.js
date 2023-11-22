@@ -1,9 +1,11 @@
 import { Button } from 'react-native'
 import MapviewScreen from '../screens/MapviewScreen'
-import Notificationscreen from '../screens/notificationScreen'
+import Notificationscreen from '../../src/screens/notificationScreen'
+import RegistrationPage from '../screens/RegistrationScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Ionicons } from '@expo/vector-icons'
+
 const Stack = createNativeStackNavigator()
 
 const Navigator = () => {
@@ -14,7 +16,7 @@ const Navigator = () => {
                     name="Map"
                     component={MapviewScreen}
                     options={({ navigation }) => ({
-                        title: 'Maps', // Replace with your desired title
+                        title: 'Maps',
                         headerRight: () => (
                             <Ionicons
                                 name="notifications"
@@ -31,6 +33,10 @@ const Navigator = () => {
                 <Stack.Screen
                     name="Your Notifications"
                     component={Notificationscreen}
+                />
+                <Stack.Screen
+                    name="RegistrationPage"
+                    component={RegistrationPage}
                 />
             </Stack.Navigator>
         </NavigationContainer>

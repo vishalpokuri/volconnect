@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "type": "Meeseva",
+        "latitude": 12.975219,
+        "longitude": 79.163462,
+        "name": "Meeseva Office 1"
+    },
+    {
+        "id": 2,
+        "type": "Meeseva",
+        "latitude": 12.973319,
+        "longitude": 79.165462,
+        "name": "Meeseva Office 2"
+    },
+    {
+        "id": 3,
+        "type": "Municipality",
+        "latitude": 12.976019,
+        "longitude": 79.164362,
+        "name": "Municipality Office 1"
+    },
+    {
+        "id": 4,
+        "type": "Municipality",
+        "latitude": 12.974319,
+        "longitude": 79.166462,
+        "name": "Municipality Office 2"
+    },
+    {
+        "id": 5,
+        "type": "Sachivalay",
+        "latitude": 12.975319,
+        "longitude": 79.165462,
+        "name": "Sachivalay Office 1"
+    },
+    {
+        "id": 6,
+        "type": "Sachivalay",
+        "latitude": 12.973419,
+        "longitude": 79.163562,
+        "name": "Sachivalay Office 2"
+    },
+    {
+        "id": 7,
+        "type": "Meeseva",
+        "latitude": 12.974519,
+        "longitude": 79.163679,
+        "name": "Meeseva Office 3"
+    },
+    {
+        "id": 8,
+        "type": "Municipality",
+        "latitude": 12.974719,
+        "longitude": 79.164879,
+        "name": "Municipality Office 3"
+    },
+    {
+        "id": 9,
+        "type": "Sachivalay",
+        "latitude": 12.973619,
+        "longitude": 79.164662,
+        "name": "Sachivalay Office 3"
+    },
+    {
+        "id": 10,
+        "type": "Meeseva",
+        "latitude": 12.974919,
+        "longitude": 79.164279,
+        "name": "Meeseva Office 4"
+    },
+    {
+        "id": 11,
+        "type": "Newly added stores near you",
+        "latitude": 12.982137599032237,
+        "longitude": 79.06662721424892,
+        "name": "Bean Bliss Coffee",
+        "description": "Sip, Relax, Repeat. Welcome to Bean Bliss Coffee. Indulge in the rich aroma of freshly brewed coffee and unwind in our cozy corner.\""
+    },
+    {
+        "id": 12,
+        "type": "Newly added stores near you",
+        "latitude": 13.042285849213073,
+        "longitude": 79.1105978745492,
+        "name": "Bookworms",
+        "description": "Bookworm's Delight beckons! Dive into a world of stories at our bookstore. Find your next literary adventure and lose yourself in the pages."
+    },
+    {
+        "id": 13,
+        "type": "Newly added stores near you",
+        "latitude": 13.0415552090649,
+        "longitude": 79.20696466676971,
+        "name": "Earth & Fire Pottery",
+        "description": "Welcome to Earth & Fire Pottery. Unearth handmade treasures that transform your space. Crafted with passion, fired with creativity."
+    },
+    {
+        "id": 14,
+        "type": "Newly added stores near you",
+        "latitude": 12.91850246463598,
+        "longitude": 79.1338893703322,
+        "name": "Store 4",
+        "description": "Welcome to Neelima's Botique. Explore the latest arrivals!"
+    },
+    {
+        "id": 15,
+        "type": "Newly added stores near you",
+        "latitude": 12.883481651686985,
+        "longitude": 79.22768432408616,
+        "name": "Store 5",
+        "description": "Welcome to Arun's Bakes. Explore the delicious catalogue of finest cakes and drool!"
+    }
+]

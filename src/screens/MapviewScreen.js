@@ -3,11 +3,13 @@ import MapView, { Marker } from 'react-native-maps'
 import { getNearbyVolunteers } from '../components/VolunteerLogic'
 import VolunteerFoundModal from '../screens/VolunteerFoundmodal'
 import { Text, Pressable, Image, FlatList } from 'react-native'
-import { Entypo } from '@expo/vector-icons'
+import officeData from '../../assets/data/officeData.json'
 import { Dimensions, StyleSheet, View, TouchableOpacity } from 'react-native'
 import * as Location from 'expo-location'
 import { MaterialIcons } from '@expo/vector-icons'
 const img = 'https://cdn-icons-png.flaticon.com/512/565/565422.png'
+import RegistrationPage from '../screens/RegistrationScreen'
+import { useNavigation } from '@react-navigation/native'
 
 const MapviewScreen = () => {
     const [location, setLocation] = useState(null)
@@ -17,7 +19,7 @@ const MapviewScreen = () => {
     const [filteredOffices, setFilteredOffices] = useState([])
     const [selectedOffice, setSelectedOffice] = useState(null)
     const [showVolunteerModal, setShowVolunteerModal] = useState(false)
-
+    const [showRegistration, setShowRegistration] = useState(false)
     const [nearbyVolunteers, setNearbyVolunteers] = useState([])
     useEffect(() => {
         ;(async () => {
@@ -58,6 +60,11 @@ const MapviewScreen = () => {
                 longitudeDelta: 0.0421,
             })
         }
+    }
+    const navigation = useNavigation()
+    const handleRegisterClick = () => {
+        setShowRegistration(true)
+        navigation.push('RegistrationPage')
     }
 
     const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
@@ -191,10 +198,52 @@ const MapviewScreen = () => {
             longitude: 79.164279,
             name: 'Meeseva Office 4',
         },
+        {
+            id: 11,
+            type: 'Newly added stores near you',
+            latitude: 12.982137599032237,
+            longitude: 79.06662721424892,
+            name: 'Bean Bliss Coffee',
+            description:
+                'Sip, Relax, Repeat. Welcome to Bean Bliss Coffee. Indulge in the rich aroma of freshly brewed coffee and unwind in our cozy corner."',
+        },
+        {
+            id: 12,
+            type: 'Newly added stores near you',
+            latitude: 13.042285849213073,
+            longitude: 79.1105978745492,
+            name: 'Bookworms',
+            description:
+                "Bookworm's Delight beckons! Dive into a world of stories at our bookstore. Find your next literary adventure and lose yourself in the pages.",
+        },
+        {
+            id: 13,
+            type: 'Newly added stores near you',
+            latitude: 13.0415552090649,
+            longitude: 79.20696466676971,
+            name: 'Earth & Fire Pottery',
+            description:
+                'Welcome to Earth & Fire Pottery. Unearth handmade treasures that transform your space. Crafted with passion, fired with creativity.',
+        },
+        {
+            id: 14,
+            type: 'Newly added stores near you',
+            latitude: 12.91850246463598,
+            longitude: 79.1338893703322,
+            name: "Neelima's Botique",
+            description:
+                "Welcome to Neelima's Botique. Explore the latest arrivals!",
+        },
+        {
+            id: 15,
+            type: 'Newly added stores near you',
+            latitude: 12.883481651686985,
+            longitude: 79.22768432408616,
+            name: 'Store 5',
+            description:
+                "Welcome to Arun's Bakes. Explore the delicious catalogue of finest cakes and drool!",
+        },
     ]
-    const createPost = () => {
-        console.warn('Post created')
-    }
 
     return (
         <View style={styles.container}>
@@ -233,6 +282,14 @@ const MapviewScreen = () => {
 
             {/* My Location Button */}
             <TouchableOpacity
+                style={styles.registerBusiness}
+                onPress={handleRegisterClick}
+            >
+                <Text style={styles.registerBusinessText}>
+                    REGISTER YOUR BUSINESS
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
                 style={styles.myLocationButton}
                 onPress={handleCenterMap}
             >
@@ -241,7 +298,12 @@ const MapviewScreen = () => {
 
             {/* Office Type Buttons */}
             <View style={styles.buttonContainer}>
-                {['Meeseva', 'Municipality', 'Sachivalay'].map((officeType) => (
+                {[
+                    'Newly added stores near you',
+                    'Meeseva',
+                    'Municipality',
+                    'Sachivalay',
+                ].map((officeType) => (
                     <TouchableOpacity
                         key={officeType}
                         style={[
@@ -278,7 +340,8 @@ const MapviewScreen = () => {
                             selectedOffice.latitude,
                             selectedOffice.longitude,
                         ).toFixed(2)}{' '}
-                        km
+                        km {'\n\n'}
+                        {selectedOffice.description}{' '}
                     </Text>
                     <View style={styles.overlayButtonBg}></View>
                     <TouchableOpacity onPress={handleOverlayClose}>
@@ -386,6 +449,16 @@ const styles = StyleSheet.create({
     icon: {
         marginLeft: 'auto',
     },
+    registerBusiness: {
+        bottom: 43,
+        backgroundColor: 'white',
+        borderRadius: 10000,
+        padding: 10,
+        elevation: 5,
+    },
+    registerBusinessText: {
+        fontSize: 16,
+    },
 })
 
 // Function to get pin color based on the type of office
@@ -397,6 +470,8 @@ const getPinColor = (type) => {
             return 'blue'
         case 'Sachivalay':
             return 'green'
+        case 'Newly added stores near you':
+            return 'yellow'
         // Add more cases for other types of offices
         default:
             return 'purple'
