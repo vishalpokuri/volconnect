@@ -293,7 +293,7 @@ const MapviewScreen = () => {
                 style={styles.myLocationButton}
                 onPress={handleCenterMap}
             >
-                <MaterialIcons name="my-location" size={48} color="black" />
+                <MaterialIcons name="my-location" size={38} color="#4a80f5" />
             </TouchableOpacity>
 
             {/* Office Type Buttons */}
@@ -395,7 +395,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 8,
         elevation: 5,
-        backgroundColor: 'lightgreen',
+        backgroundColor: '#4a80f5',
     },
     selectedButton: {
         backgroundColor: 'lightblue',
@@ -458,6 +458,10 @@ const styles = StyleSheet.create({
     },
     registerBusinessText: {
         fontSize: 16,
+    },
+    connectWithVolunteerText: {
+        color: 'white',
+        fontWeight: '800',
     },
 })
 

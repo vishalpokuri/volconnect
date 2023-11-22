@@ -15,8 +15,8 @@
     },
     {
         "id": 3,
-        "topic": "Government promotional info",
-        "message": "Check out the latest government initiatives for your community!",
+        "topic": "New store opened: BookWorms",
+        "message": "New book store opened near your locality, check out store-opening offers and massive discounts on www.<abc>.com",
         "timestamp": "2023-01-01T12:00:00Z",
         "icon": "https://cdn-icons-png.flaticon.com/512/1182/1182718.png"
     },
@@ -28,19 +28,20 @@
         "icon": "https://cdn-icons-png.flaticon.com/512/1182/1182718.png"
     },
     {
+        "id": 6,
+        "topic": "Government-run Local Farmers' Market",
+        "message": "Support local farmers! Explore the vibrant Farmers' Market showcasing fresh produce, handmade crafts, and local specialties.",
+        "timestamp": "2023-01-20T10:00:00Z",
+        "icon": "https://cdn-icons-png.flaticon.com/512/1182/1182718.png"
+    },
+    {
         "id": 5,
         "topic": "Community meeting",
         "message": "There will be a community meeting at the local community center at 7:00 PM.",
         "timestamp": "2023-01-03T19:00:00Z",
         "icon": "https://cdn-icons-png.flaticon.com/512/1182/1182718.png"
     },
-    {
-        "id": 6,
-        "topic": "Park cleanup",
-        "message": "Join us for a park cleanup event this Saturday at 9:00 AM.",
-        "timestamp": "2023-01-06T09:00:00Z",
-        "icon": "https://cdn-icons-png.flaticon.com/512/1182/1182718.png"
-    },
+
     {
         "id": 7,
         "topic": "COVID-19 vaccination drive",
@@ -67,13 +68,6 @@
         "topic": "Park cleanup",
         "message": "Join us for a park cleanup event this Saturday at 9:00 AM.",
         "timestamp": "2023-01-06T09:00:00Z",
-        "icon": "https://cdn-icons-png.flaticon.com/512/1182/1182718.png"
-    },
-    {
-        "id": 11,
-        "topic": "COVID-19 vaccination drive",
-        "message": "A COVID-19 vaccination drive is scheduled at the local health center. Check for eligibility and book your slot.",
-        "timestamp": "2023-01-10T13:00:00Z",
         "icon": "https://cdn-icons-png.flaticon.com/512/1182/1182718.png"
     }
 ]
