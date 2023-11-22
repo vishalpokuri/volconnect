@@ -1,21 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { Amplify } from "aws-amplify";
-import awsconfig from "./src/aws-exports";
-import { withAuthenticator } from "aws-amplify-react-native";
-import { Amplify } from "aws-amplify";
-import amplifyconfig from "./amplifyconfiguration.json";
+import React, { useState, useEffect } from "react";
 
-Amplify.configure({
-  ...awsconfig,
-  amplifyconfig,
-  Analytics: { disabled: true },
-});
-function App() {
+import { View, Dimensions, StyleSheet } from "react-native";
+
+import MapviewScreen from "./src/screens/MapviewScreen";
+export default function App() {
   return (
     <View style={styles.container}>
-      <View id="map" style={styles.map}></View>
-      <StatusBar style="auto" />
+      <MapviewScreen />
     </View>
   );
 }
@@ -23,13 +14,8 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "gray",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
-  map: {
-    width: 50,
-    height: 50,
-  },
 });
-export default withAuthenticator(App);

@@ -1,60 +1,91 @@
-import { Text, Image, View, StyleSheet, Button } from "react-native";
+import React from "react";
+import {
+  Text,
+  Image,
+  View,
+  StyleSheet,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-const post = {
-  id: "p1",
-  createdAt: "4 m",
-  User: {
-    id: "u1",
-    image:
-      "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg",
-    name: "Vadim Savin",
-    rating: 4.32,
-  },
-  description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-  image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
-  numberOfLikes: 11,
-  numberOfShares: 2,
-};
-const VolunteerFoundModal = () => {
+import { getNearbyVolunteers } from "../components/VolunteerLogic"; // Import the function
+import { Entypo } from "@expo/vector-icons";
+const VolunteerFoundModal = ({ userLocation, maxDistance, onClose }) => {
+  // Call the function to get nearby volunteers
+  const nearbyVolunteers = getNearbyVolunteers(userLocation, maxDistance);
+
+  if (nearbyVolunteers.length === 0) {
+    // If no nearby volunteers, render a message
+    return (
+      <View style={styles.modalofvolunteer}>
+        <Text style={styles.volunteerFound}>No Volunteers Nearby</Text>
+        <Button title="Close" onPress={onClose} />
+      </View>
+    );
+  }
+
+  // If there are nearby volunteers, display the first one
+  const volunteer = nearbyVolunteers[0];
+
   return (
     <View style={styles.modalofvolunteer}>
-      <Text style={styles.volunteerFound}>Volunteer Found!</Text>
+      <View style={styles.crossheader}>
+        <Text style={styles.volunteerFound}>Volunteer Found!</Text>
+        <TouchableOpacity style={styles.cross} onPress={onClose}>
+          <Entypo name="circle-with-cross" size={30} color="black" />
+        </TouchableOpacity>
+      </View>
       {/* Header */}
       <View style={styles.header}>
-        <Image source={{ uri: post.User.image }} style={styles.profileImage} />
+        <Image source={{ uri: volunteer.image }} style={styles.profileImage} />
         <View>
-          <Text style={styles.name}>{post.User.name}</Text>
+          <Text style={styles.name}>{volunteer.name}</Text>
         </View>
         {/* Star rating */}
         <View style={styles.rating}>
           <Ionicons name="md-star" size={20} color="#b7dd29" />
-          <Text style={styles.ratingtext}>{post.User.rating} </Text>
+          <Text style={styles.ratingtext}>{volunteer.rating} </Text>
         </View>
       </View>
-      <Text style={styles.descriptionVolunteer}> description</Text>
+      <Text style={styles.descriptionVolunteer}>{volunteer.description}</Text>
       <View style={styles.connectButton}>
-        <Button title="Connect" />
+        <Button title="Connect" onPress={() => alert("Connecting...")} />
       </View>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   modalofvolunteer: {
     backgroundColor: "white",
     width: "60%",
     height: "40%",
     borderRadius: 25,
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    marginBottom: 50,
+  },
+  cross: {
+    color: "gray",
+    paddingTop: 40,
   },
   volunteerFound: {
+    borderRadius: 25,
+
     fontWeight: "500",
     padding: 20,
     fontSize: 18,
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
+  crossheader: {
+    flexDirection: "row",
+    alignContent: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
+  },
   //header
   header: {
+    backgroundColor: "white",
     marginVertical: 10,
     width: "100%",
     flexDirection: "column",
@@ -71,14 +102,10 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     fontSize: 25,
   },
-  description: {
+  descriptionVolunteer: {
     padding: 10,
     lineHeight: 20,
     letterSpacing: 0.3,
-  },
-  image: {
-    width: "100%",
-    aspectRatio: 1,
   },
   //Star rating
   rating: {
@@ -89,8 +116,6 @@ const styles = StyleSheet.create({
     marginTop: "auto",
     marginBottom: 20,
   },
-  descriptionVolunteer: {
-    paddingLeft: 10,
-  },
 });
+
 export default VolunteerFoundModal;

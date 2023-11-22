@@ -1,0 +1,46 @@
+{
+  "notifications": [
+    {
+      "id": 1,
+      "topic": "Garbage van arrives",
+      "message": "The garbage van is scheduled to arrive at 9:20 AM in your area.",
+      "timestamp": "2023-01-01T09:20:00Z"
+    },
+    {
+      "id": 2,
+      "topic": "Municipality water release",
+      "message": "Municipality water will be released at 5:40 PM in your area.",
+      "timestamp": "2023-01-01T17:40:00Z"
+    },
+    {
+      "id": 3,
+      "topic": "Government promotional info",
+      "message": "Check out the latest government initiatives for your community!",
+      "timestamp": "2023-01-01T12:00:00Z"
+    },
+    {
+      "id": 4,
+      "topic": "Road maintenance",
+      "message": "Road maintenance work will take place in your area from 10:00 AM to 2:00 PM.",
+      "timestamp": "2023-01-02T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "topic": "Community meeting",
+      "message": "There will be a community meeting at the local community center at 7:00 PM.",
+      "timestamp": "2023-01-03T19:00:00Z"
+    },
+    {
+      "id": 6,
+      "topic": "Park cleanup",
+      "message": "Join us for a park cleanup event this Saturday at 9:00 AM.",
+      "timestamp": "2023-01-06T09:00:00Z"
+    },
+    {
+      "id": 7,
+      "topic": "COVID-19 vaccination drive",
+      "message": "A COVID-19 vaccination drive is scheduled at the local health center. Check for eligibility and book your slot.",
+      "timestamp": "2023-01-10T13:00:00Z"
+    }
+  ]
+}
