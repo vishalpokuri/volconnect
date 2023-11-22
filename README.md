@@ -1,3 +1,3 @@
-# volconnect
+# VolConnect
 
 Volconnect is a groundbreaking app designed to bridge the communication gap within local communities. Spearheaded by Vishal Pokuri from India, this innovative platform addresses the challenges of staying informed in our busy lives. The app focuses on promoting local businesses, streamlining government document processes, and enhancing community engagement. With features like business promotion, assistance with government documents, real-time updates on essential services, and a complaint section for community issues, Volconnect aims to revolutionize how people connect and stay informed in their neighborhoods. The project is committed to continuous improvement, with plans for multi-language support and public input for future enhancements.
