@@ -29,7 +29,7 @@ const MapviewScreen = () => {
                 return
             }
             let userLocation = await Location.getCurrentPositionAsync({})
-            setLocation(userLocation) // Correctly update the location state
+            setLocation(userLocation) 
             setShowOffices(true)
         })()
     }, [])
@@ -38,10 +38,10 @@ const MapviewScreen = () => {
             alert('Location not available.')
             return
         }
-        const maxDistance = 10 // Example: 10 km
+        const maxDistance = 10 
         // Check for nearby volunteers
         const volunteers = getNearbyVolunteers(location, maxDistance)
-        // If a volunteer is found, show the modal
+        // If a volunteer is found, pop modal
         if (volunteers.length > 0) {
             setShowVolunteerModal(true)
             setNearbyVolunteers(volunteers)
@@ -52,7 +52,7 @@ const MapviewScreen = () => {
 
     const handleCenterMap = async () => {
         if (location) {
-            // Center the map on the user's location
+            // Centering user Loc
             mapViewRef.current.animateToRegion({
                 latitude: location.coords.latitude,
                 longitude: location.coords.longitude,
@@ -68,7 +68,7 @@ const MapviewScreen = () => {
     }
 
     const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
-        var R = 6371 // Radius of the earth in km
+        var R = 6371 
         var dLat = deg2rad(lat2 - lat1)
         var dLon = deg2rad(lon2 - lon1)
         var a =
@@ -78,7 +78,7 @@ const MapviewScreen = () => {
                 Math.sin(dLon / 2) *
                 Math.sin(dLon / 2)
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-        var distance = R * c // Distance in km
+        var distance = R * c 
         return distance
     }
 
@@ -90,7 +90,7 @@ const MapviewScreen = () => {
         setSelectedOfficeType(type)
         setShowOffices(true)
 
-        const maxDistance = 10 // Example: 10 km
+        const maxDistance = 10 
 
         if (location) {
             const nearbyOffices = officeData.filter((office) => {
@@ -126,7 +126,7 @@ const MapviewScreen = () => {
 
     const mapViewRef = React.createRef()
 
-    // Dummy data for different types of offices
+    //Dummy data
     const officeData = [
         {
             id: 1,
@@ -247,7 +247,6 @@ const MapviewScreen = () => {
 
     return (
         <View style={styles.container}>
-            {/* Header for creating a post */}
             {/* Map */}
             <MapView
                 ref={mapViewRef}
@@ -356,8 +355,8 @@ const MapviewScreen = () => {
 const styles = StyleSheet.create({
     container: {
         ...StyleSheet.absoluteFillObject,
-        justifyContent: 'flex-end', // Align map at the bottom of the container
-        alignItems: 'center', // Center map horizontally
+        justifyContent: 'flex-end', 
+        alignItems: 'center', 
     },
     map: {
         flex: 1,
@@ -465,7 +464,6 @@ const styles = StyleSheet.create({
     },
 })
 
-// Function to get pin color based on the type of office
 const getPinColor = (type) => {
     switch (type) {
         case 'Meeseva':
@@ -476,7 +474,6 @@ const getPinColor = (type) => {
             return 'green'
         case 'Newly added stores near you':
             return 'yellow'
-        // Add more cases for other types of offices
         default:
             return 'purple'
     }
