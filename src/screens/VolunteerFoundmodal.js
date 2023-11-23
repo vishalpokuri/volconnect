@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { getNearbyVolunteers } from "../components/VolunteerLogic"; // Import the function
+import { getNearbyVolunteers } from "../components/VolunteerLogic"; 
 import { Entypo } from "@expo/vector-icons";
 const VolunteerFoundModal = ({ userLocation, maxDistance, onClose }) => {
   // Call the function to get nearby volunteers
