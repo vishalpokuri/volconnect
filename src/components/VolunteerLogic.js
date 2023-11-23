@@ -3,7 +3,6 @@ export const getNearbyVolunteers = (userLocation, maxDistance) => {
     console.error("Invalid userLocation:", userLocation);
     return [];
   }
-  // Dummy data for volunteers
   const volunteers = [
     {
       id: 2,
@@ -41,7 +40,6 @@ export const getNearbyVolunteers = (userLocation, maxDistance) => {
       rating: 4.0,
       description: "Friendly and dependable!",
     },
-    // Add more volunteers with different coordinates
 
     // Volunteers outside the 10km radius
     {
@@ -90,7 +88,7 @@ export const getNearbyVolunteers = (userLocation, maxDistance) => {
   return nearbyVolunteers;
 };
 const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
-  var R = 6371; // Radius of the earth in km
+  var R = 6371; 
   var dLat = deg2rad(lat2 - lat1);
   var dLon = deg2rad(lon2 - lon1);
   var a =
@@ -100,7 +98,7 @@ const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
       Math.sin(dLon / 2) *
       Math.sin(dLon / 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  var distance = R * c; // Distance in km
+  var distance = R * c; 
   return distance;
 };
 const deg2rad = (deg) => {
